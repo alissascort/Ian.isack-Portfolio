@@ -6,6 +6,7 @@
   <title>Ian Isack — Cybersecurity Analyst & System Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     /* ─── TOKENS ──────────────────────────────────────────────── */
     :root {
@@ -315,13 +316,13 @@
       user-select: none;
     }
     .hero-img-frame img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center 18%;
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      object-position: center 18%;
     }
     .hero-badge {
-      position: absolute; bottom: 24px; right: -12px;
+      position: absolute; bottom: 12px; right: 0;
       background: var(--g700); border: 1px solid var(--border);
       backdrop-filter: blur(10px);
       border-radius: 10px;
@@ -376,7 +377,7 @@
       transition: border-color var(--transition);
     }
     .pillar:hover { border-color: rgba(74,143,203,0.4); }
-    .pillar-icon { font-size: 22px; margin-bottom: 8px; }
+    .pillar-icon { font-size: 22px; margin-bottom: 8px; color: var(--blue); }
     .pillar h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
     .pillar p { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
@@ -396,10 +397,10 @@
       display: grid; place-items: center;
       font-size: 18px;
     }
-    .cat-icon.red { background: rgba(220,60,60,0.15); }
-    .cat-icon.blue { background: rgba(74,143,203,0.15); }
-    .cat-icon.green { background: rgba(58,97,65,0.3); }
-    .cat-icon.teal { background: rgba(56,178,172,0.15); }
+    .cat-icon.red { background: rgba(220,60,60,0.15); color: #ef4444; }
+    .cat-icon.blue { background: rgba(74,143,203,0.15); color: #4a8fcb; }
+    .cat-icon.green { background: rgba(58,97,65,0.3); color: #6aab74; }
+    .cat-icon.teal { background: rgba(56,178,172,0.15); color: #38b2ac; }
     .cat-title { font-size: 14px; font-weight: 700; }
     .cat-sub { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
     .skill-items { display: flex; flex-direction: column; gap: 14px; }
@@ -442,7 +443,7 @@
     .project-card:hover::before { opacity: 1; }
     .project-card.featured { grid-column: span 2; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-    .project-icon { font-size: 28px; }
+    .project-icon { font-size: 28px; color: var(--blue); }
     .project-links { display: flex; gap: 8px; }
     .icon-btn {
       width: 32px; height: 32px; border-radius: 8px;
@@ -483,6 +484,7 @@
       font-size: 22px; flex-shrink: 0;
       position: relative; z-index: 1;
       transition: all var(--transition);
+      color: var(--blue);
     }
     .wf-step:hover .wf-node { border-color: var(--blue); box-shadow: 0 0 24px var(--blue-glow); }
     .wf-content { padding-top: 12px; }
@@ -503,7 +505,7 @@
       transition: all var(--transition);
     }
     .contact-link:hover { border-color: rgba(74,143,203,0.4); transform: translateX(4px); }
-    .cl-icon { font-size: 20px; width: 36px; text-align: center; }
+    .cl-icon { font-size: 20px; width: 36px; text-align: center; color: var(--blue); }
     .cl-label { font-size: 12px; font-family: var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
     .cl-val { font-size: 14px; font-weight: 500; }
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -548,7 +550,7 @@
     .mobile-nav a:hover { color: var(--white); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
-    @media (max-width: 900px) {
+    @media (max-width: 680px) {
       .hero-inner { grid-template-columns: 1fr; gap: 48px; }
       .hero-image-wrap { order: -1; }
       .hero-img-frame { width: 220px; height: 220px; }
@@ -584,8 +586,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" title="Toggle theme">☀️</button>
-        <button class="nav-menu-btn" id="menuBtn">☰</button>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+        <button class="nav-menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
   </nav>
@@ -617,7 +619,7 @@
           real-world adversarial conditions.
         </p>
         <div class="hero-ctas reveal">
-          <a href="#projects" class="btn btn-primary">View Projects →</a>
+          <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
           <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
         <div class="hero-stats reveal">
@@ -639,9 +641,9 @@
       <div class="hero-right">
         <div class="hero-image-wrap reveal">
           <div class="hero-image-ring"></div>
-         <div class="hero-img-frame">
-           <img src="meeporti.jpeg" alt="Ian Isack" />
-         </div>
+          <div class="hero-img-frame">
+            <img src="meeporti.jpeg" alt="Ian Isack" />
+          </div>
           <div class="hero-badge">
             <span class="dot"></span>Open to opportunities
           </div>
@@ -686,22 +688,22 @@
           <p>Security isn't a checklist. It's a continuous discipline of thinking like your adversary while building for resilience.</p>
           <div class="about-pillars">
             <div class="pillar">
-              <div class="pillar-icon">🔍</div>
+              <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
               <h4>Analytical Thinking</h4>
               <p>Tracing vulnerabilities to root cause, not surface symptoms.</p>
             </div>
             <div class="pillar">
-              <div class="pillar-icon">⚙️</div>
+              <div class="pillar-icon"><i class="fa-solid fa-gears"></i></div>
               <h4>System Engineering</h4>
               <p>Understanding how stacks interact at every layer.</p>
             </div>
             <div class="pillar">
-              <div class="pillar-icon">🛡️</div>
+              <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <h4>Defensive Design</h4>
               <p>Building hardened solutions informed by offensive insight.</p>
             </div>
             <div class="pillar">
-              <div class="pillar-icon">📋</div>
+              <div class="pillar-icon"><i class="fa-solid fa-file-lines"></i></div>
               <h4>Structured Reporting</h4>
               <p>Translating technical findings into actionable remediation.</p>
             </div>
@@ -724,7 +726,7 @@
         <!-- Offensive -->
         <div class="skill-category reveal">
           <div class="cat-header">
-            <div class="cat-icon red">🔴</div>
+            <div class="cat-icon red"><i class="fa-solid fa-crosshairs"></i></div>
             <div>
               <div class="cat-title">Offensive Security</div>
               <div class="cat-sub">Red Team Focus</div>
@@ -753,7 +755,7 @@
         <!-- Defensive -->
         <div class="skill-category reveal">
           <div class="cat-header">
-            <div class="cat-icon blue">🔵</div>
+            <div class="cat-icon blue"><i class="fa-solid fa-shield-virus"></i></div>
             <div>
               <div class="cat-title">Defensive Security</div>
               <div class="cat-sub">Blue Team Focus</div>
@@ -782,7 +784,7 @@
         <!-- Dev & Systems -->
         <div class="skill-category reveal">
           <div class="cat-header">
-            <div class="cat-icon green">⚙️</div>
+            <div class="cat-icon green"><i class="fa-solid fa-code"></i></div>
             <div>
               <div class="cat-title">Development &amp; Systems</div>
               <div class="cat-sub">Engineering Stack</div>
@@ -807,7 +809,7 @@
         <!-- Networking -->
         <div class="skill-category reveal">
           <div class="cat-header">
-            <div class="cat-icon teal">🌐</div>
+            <div class="cat-icon teal"><i class="fa-solid fa-network-wired"></i></div>
             <div>
               <div class="cat-title">Networking</div>
               <div class="cat-sub">Protocol &amp; Infrastructure</div>
@@ -849,10 +851,10 @@
         <!-- SentriX Panel - featured -->
         <div class="project-card featured reveal">
           <div class="project-header">
-            <div class="project-icon">🛡️</div>
+            <div class="project-icon"><i class="fa-solid fa-shield-virus"></i></div>
             <div class="project-links">
               <span class="tag">SIEM</span>
-              <a href="#" class="icon-btn" title="GitHub">⌥</a>
+              <a href="#" class="icon-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3 class="project-title">SentriX Panel</h3>
@@ -879,7 +881,7 @@
         <!-- IR Simulator -->
         <div class="project-card reveal">
           <div class="project-header">
-            <div class="project-icon">⚡</div>
+            <div class="project-icon"><i class="fa-solid fa-bolt"></i></div>
             <div class="project-links">
               <span class="tag">BlueTeam</span>
             </div>
@@ -905,7 +907,7 @@
         <!-- Secure Messaging -->
         <div class="project-card reveal">
           <div class="project-header">
-            <div class="project-icon">🔒</div>
+            <div class="project-icon"><i class="fa-solid fa-lock"></i></div>
             <div class="project-links">
               <span class="tag">Cryptography</span>
             </div>
@@ -931,7 +933,7 @@
         <!-- Cyber Lab -->
         <div class="project-card reveal">
           <div class="project-header">
-            <div class="project-icon">🧪</div>
+            <div class="project-icon"><i class="fa-solid fa-flask"></i></div>
             <div class="project-links">
               <span class="tag">Lab</span>
             </div>
@@ -970,7 +972,7 @@
         <div class="wf-track"></div>
         <div class="wf-steps">
           <div class="wf-step">
-            <div class="wf-node">🔎</div>
+            <div class="wf-node"><i class="fa-solid fa-magnifying-glass"></i></div>
             <div class="wf-content">
               <div class="wf-num">Phase 01 — Reconnaissance</div>
               <h3 class="wf-title">Information Gathering</h3>
@@ -978,7 +980,7 @@
             </div>
           </div>
           <div class="wf-step">
-            <div class="wf-node">📊</div>
+            <div class="wf-node"><i class="fa-solid fa-chart-bar"></i></div>
             <div class="wf-content">
               <div class="wf-num">Phase 02 — Analysis</div>
               <h3 class="wf-title">Vulnerability Assessment</h3>
@@ -986,7 +988,7 @@
             </div>
           </div>
           <div class="wf-step">
-            <div class="wf-node">💥</div>
+            <div class="wf-node"><i class="fa-solid fa-bomb"></i></div>
             <div class="wf-content">
               <div class="wf-num">Phase 03 — Exploitation</div>
               <h3 class="wf-title">Controlled Attack Simulation</h3>
@@ -994,7 +996,7 @@
             </div>
           </div>
           <div class="wf-step">
-            <div class="wf-node">📝</div>
+            <div class="wf-node"><i class="fa-solid fa-file-pen"></i></div>
             <div class="wf-content">
               <div class="wf-num">Phase 04 — Reporting &amp; Remediation</div>
               <h3 class="wf-title">Documentation &amp; Fixes</h3>
@@ -1017,22 +1019,22 @@
           <h3>Let's Work Together</h3>
           <p>Whether it's a security assessment, a development collaboration, or a technical discussion — reach out and let's talk.</p>
           <div class="contact-links">
-            <a href="mailto:pablo@example.com" class="contact-link">
-              <div class="cl-icon">📧</div>
+            <a href="mailto:ianisack346@gmail.com" class="contact-link">
+              <div class="cl-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
                 <div class="cl-label">Email</div>
                 <div class="cl-val">ianisack346@gmail.com</div>
               </div>
             </a>
-            <a href="https://github.com/" target="_blank" class="contact-link">
-              <div class="cl-icon">⌥</div>
+            <a href="https://github.com/alissascort/" target="_blank" class="contact-link">
+              <div class="cl-icon"><i class="fa-brands fa-github"></i></div>
               <div>
                 <div class="cl-label">GitHub</div>
-                <div class="cl-val">https://github.com/alissascort/</div>
+                <div class="cl-val">github.com/alissascort</div>
               </div>
             </a>
             <a href="https://linkedin.com/" target="_blank" class="contact-link">
-              <div class="cl-icon">🔗</div>
+              <div class="cl-icon"><i class="fa-brands fa-linkedin"></i></div>
               <div>
                 <div class="cl-label">LinkedIn</div>
                 <div class="cl-val">linkedin.com/in/pablo</div>
@@ -1060,7 +1062,7 @@
             <label class="form-label">Message</label>
             <textarea class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
           </div>
-          <button class="btn btn-primary btn-send" onclick="handleSend(this)">Send Message →</button>
+          <button class="btn btn-primary btn-send" onclick="handleSend(this)">Send Message <i class="fa-solid fa-paper-plane"></i></button>
         </div>
       </div>
     </div>
@@ -1071,7 +1073,7 @@
     <footer>
       <div class="footer-copy">© 2026 <span>Ian isack</span> — Built with precision. All rights reserved.</div>
       <div class="footer-copy" style="display:flex;gap:16px">
-        <a href="#hero" style="color:var(--muted)">Back to top ↑</a>
+        <a href="#hero" style="color:var(--muted)">Back to top <i class="fa-solid fa-arrow-up"></i></a>
       </div>
     </footer>
   </div>
@@ -1090,7 +1092,7 @@
     themeToggle.addEventListener('click', () => {
       isDark = !isDark;
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
 
     // Mobile nav
@@ -1104,7 +1106,6 @@
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          // stagger siblings
           const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
           const idx = siblings.indexOf(e.target);
           setTimeout(() => {
@@ -1132,12 +1133,12 @@
 
     // Send handler
     function handleSend(btn) {
-      btn.textContent = 'Message Sent ✓';
+      btn.innerHTML = 'Message Sent <i class="fa-solid fa-check"></i>';
       btn.style.background = 'var(--g300)';
       btn.style.opacity = '0.7';
       btn.disabled = true;
       setTimeout(() => {
-        btn.textContent = 'Send Message →';
+        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
         btn.style.opacity = '1';
         btn.disabled = false;
       }, 3000);
